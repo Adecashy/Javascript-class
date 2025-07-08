@@ -1,0 +1,66 @@
+body{
+    text-align: center;
+}
+.inputTwo{
+    margin-bottom: -30px;
+}
+.inputTwo input{
+    border: none;
+    width: 260px;
+    height: 10px;
+    text-align: right;
+    background: none;
+}
+.input input{
+    border: none;
+    width: 260px;
+    height: 100px;
+    text-align: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+button{
+    margin-top: 2px;
+    /* border: 10px; */
+    /* border-radius: 4px; */
+}
+.sectionOne button{
+    border: none;
+    padding: 2px 11px;
+    background: none;
+}
+.sectionTwo button{
+    height: 40px;
+    width: 62px;
+}
+.sectionTwo .img button{
+    margin-bottom: 2px;
+}
+.sectionThree button{
+   height: 40px;
+    width: 62px;
+}
+.sectionFour button{
+    height: 40px;
+    width: 62px;
+}
+.sectionFive button{
+    height: 40px;
+    width: 62px;
+}
+.sectionSix button{
+    height: 40px;
+    width: 62px;
+}
+.sectionSeven button{
+    /* padding: 10px 22px; */
+    height: 40px;
+    width: 62px;
+}
+#equalsTo {
+    background: rgb(38, 38, 210);
+    color: white;
+    border: 5px;
+    border-radius: 2px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h3>Standard</h3>
+        <div class="inputTwo">
+            <input id="displayUp" type="text" disabled>
+        </div>
+        <div class="input">
+            <input id="display" type="text" placeholder="0" disabled>
+        </div>
+        <div class="sectionOne">
+            <button>MC</button>
+            <button>MR</button>
+            <button>M+</button>
+            <button>M-</button>
+            <button>MS</button>
+            <button>M</button>
+        </div>
+        <div class="sectionTwo">
+            <button onclick="appendToDisplay('%')">%</button>
+            <button onclick="clearDisplay()">CE</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToClear()" class="img"><img src="../images/backspace.svg" alt=""></button>
+        </div>
+         <div class="sectionThree">
+            <button>1/x</button>
+            <button>x^2</button>
+            <button>SRx</button>
+            <button onclick="appendToDisplay('/')">/</button>
+        </div>
+        <div class="sectionFour">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('*')">*</button>
+        </div>
+        <div class="sectionFive">
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button>
+        </div>
+        <div class="sectionSix">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('+')">+</button>
+        </div>
+        <div class="sectionSeven">
+            <button>+/-</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button id="equalsTo" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+
+    <script>
+        let getDisplay = document.getElementById("display");
+        let getDisplayUp = document.getElementById("displayUp");
+        
+        function appendToDisplay(input) {
+            getDisplay.value += input;
+            getDisplayUp.value += input;
+        }
+        function clearDisplay() {
+            getDisplay.value = "";
+            getDisplayUp.value = "";
+        }
+        function calculate() {
+            getDisplay.value = eval(getDisplay.value);
+            getDisplayUp.value += " = ";
+        }
+        function appendToClear() {
+          getDisplay.value = getDisplay.value.slice(0, -1);
+          getDisplayUp.value = getDisplayUp.value.slice(0, -1);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Assignment 1</h2>
+        <p id="displayColor"></p>
+        <p id="displayColor2"></p>
+        <p id="displayColor3"></p>
+    </div>
+    <div>
+        <h2>Assignment 2</h2>
+        <p id="displayNumber"></p>
+        <p id="displayNumber1"></p>
+    </div>
+    <div>
+        <h2>Assignment 3</h2>
+        <p id="displayFruits"></p>
+        <p id="displayFruits1"></p>
+        <p id="displayFruits2"></p>
+        <p id="displayFruits3"></p>
+        <p id="displayFruits4"></p>
+    </div>
+    <div>
+        <h2>Assignment 4</h2>
+        <p id="displayNum"></p>
+        <p id="displayNum1"></p>
+        <p id="displayNum2"></p>
+    </div>
+    <div>
+        <h2>Assignment 5</h2>
+        <p id="displayAnimals"></p>
+        <p id="displayAnimals1"></p>
+        <p id="displayAnimals2"></p>
+    </div>
+
+
+    <script>
+
+        let color = ["blue", "red", "yellow", "green", "white", "black"];
+        displayColor.innerHTML = color;
+        displayColor2.innerHTML = color[2];
+        color[5] = "purple";
+        displayColor3.innerHTML = color;
+
+        let number = [1, 2,, 3, 4, 5, 6, 7, 8, 9, 10];
+        displayNumber.innerHTML = number.length;
+        number.push(11);
+        displayNumber1.innerHTML = number.length;
+
+        let fruits = ["apple", "banana", "cherry"];
+        displayFruits.innerHTML = fruits;
+        fruits.push("orange", "grape")
+        displayFruits1.innerHTML = fruits;
+        fruits.unshift("kiwi");
+        displayFruits2.innerHTML = fruits;
+        fruits.pop();
+        displayFruits3.innerHTML = fruits;
+        fruits.shift();
+        displayFruits4.innerHTML = fruits;
+
+        let num = [10, 20, 30, 40, 50, 60];
+        displayNum.innerHTML = num;
+        let num1 = num.slice(2, 5);
+        displayNum1.innerHTML = num1;
+        let num2 = num.splice(3, 1, 35);
+        displayNum2.innerHTML = num;
+
+        let animals = ["cat", "dog", "rabbit", "elephant"];
+        displayAnimals.innerHTML = animals;
+        let animals1 = animals.splice(2, 0, "lion", "tiger");
+        displayAnimals1.innerHTML = animals;
+        let animals2 = animals.splice(4, 1, "deer");
+        displayAnimals2.innerHTML = animals;
+
+    </script>
+
+</body>
+</html>

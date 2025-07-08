@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        th, td{
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div>
+            <input type="text" placeholder="Username" id="username">
+            <input type="number" placeholder="Phone" id="phone">
+            <button id="add-btn">Add user</button>
+          
+        </div>
+
+        <table border="1" style="border-collapse: collapse; margin-top: 2rem;">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="user-infos">
+              
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="./userinfo.js"></script>
+</body>
+</html>

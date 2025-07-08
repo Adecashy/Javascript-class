@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .calculator {
+      background-color: #252526;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      width: 320px;
+    }
+    .display {
+      background-color: #1e1e1e;
+      font-size: 2rem;
+      text-align: right;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow-x: auto;
+    }
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    button {
+      padding: 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #3e3e42;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    button:hover {
+      background-color: #505055;
+    }
+    .operator {
+      background-color: #0078d7;
+    }
+    .operator:hover {
+      background-color: #005a9e;
+    }
+    .equal {
+      background-color: #00bcf2;
+    }
+    .equal:hover {
+      background-color: #009eca;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+    <div class="buttons">
+      <button onclick="clearDisplay()">C</button>
+      <button onclick="append('%')">%</button>
+      <button onclick="backspace()">⌫</button>
+      <button class="operator" onclick="append('/')">÷</button>
+
+      <button onclick="append('7')">7</button>
+      <button onclick="append('8')">8</button>
+      <button onclick="append('9')">9</button>
+      <button class="operator" onclick="append('*')">×</button>
+
+      <button onclick="append('4')">4</button>
+      <button onclick="append('5')">5</button>
+      <button onclick="append('6')">6</button>
+      <button class="operator" onclick="append('-')">−</button>
+
+      <button onclick="append('1')">1</button>
+      <button onclick="append('2')">2</button>
+      <button onclick="append('3')">3</button>
+      <button class="operator" onclick="append('+')">+</button>
+
+      <button onclick="append('0')">0</button>
+      <button onclick="append('.')">.</button>
+      <button class="equal" colspan="2" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function append(char) {
+      if (display.innerText === '0') display.innerText = '';
+      display.innerText += char;
+    }
+
+    function clearDisplay() {
+      display.innerText = '0';
+    }
+
+    function backspace() {
+      display.innerText = display.innerText.slice(0, -1);
+      if (display.innerText === '') display.innerText = '0';
+    }
+
+    function calculate() {
+      try {
+        let result = eval(display.innerText.replace(/÷/g, '/').replace(/×/g, '*'));
+        display.innerText = result;
+      } catch (e) {
+        display.innerText = 'Error';
+      }
+    }
+  </script>
+</body>
+</html>

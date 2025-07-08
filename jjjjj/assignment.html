@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #school-name {
+        margin-left: 100px;
+    }
+
+    #school-address {
+        margin-left: 100px;
+        margin-top: -15px;
+    }
+
+    #departments {
+        margin-left: 100px;
+        margin-top: 50px;
+    }
+
+    #clubs {
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+
+    #calendar {
+        margin-left: 100px;
+        margin-top: 100px;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 id="school-name"></h1>
+        <p id="school-address"></p>
+
+        <section id="departments">
+            <h2>Departments</h2>
+        </section>
+
+        <section id="clubs">
+            <h2>Clubs</h2>
+        </section>
+
+        <section id="calendar">
+            <h2>School Calendar</h2>
+        </section>
+    </div>
+
+    <script>
+        const schoolNameEl = document.getElementById("school-name");
+        const schoolAddressEl = document.getElementById("school-address");
+        const departmentsEl = document.getElementById("departments");
+        const clubsEl = document.getElementById("clubs");
+        const calendarEl = document.getElementById("calendar");
+
+        const schoolData = [
+            {
+                name: "Greenfield International School",
+                address: { street: "123 Elm Street", city: "Lagos", state: "LA", postalCode: "100001", country: "Nigeria" },
+                contact: { phone: "+234-800-123-4567", email: "info@greenfieldschool.ng", website: "https://www.greenfieldschool.ng" },
+                departments: [
+                    {
+                        name: "Science",
+                        head: { name: "Dr. Amina Yusuf", email: "amina.yusuf@greenfieldschool.ng" },
+                        classes: [
+                            {
+                                name: "SS1 Physics", teacher: "Mr. James Okoro", students: [
+                                    { id: 101, name: "Ifeanyi Eze", age: 15, gender: "Male", grades: { term1: 78, term2: 84, term3: 90 } },
+                                    { id: 102, name: "Zainab Bello", age: 16, gender: "Female", grades: { term1: 88, term2: 91, term3: 89 } }
+                                ]
+                            },
+                            {
+                                name: "SS2 Chemistry", teacher: "Mrs. Folake Adebayo", students: []
+                            }
+                        ]
+                    },
+                    {
+                        name: "Arts",
+                        head: { name: "Mr. Tunde Ajayi", email: "tunde.ajayi@greenfieldschool.ng" },
+                        classes: [
+                            {
+                                name: "SS1 Literature", teacher: "Ms. Grace Nwosu", students: [
+                                    { id: 201, name: "Chika Obi", age: 15, gender: "Female", grades: { term1: 91, term2: 85, term3: 92 } }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                clubs: [
+                    {
+                        name: "Drama Club", coordinator: "Mrs. Emeka Nwachukwu", members: [101, 102, 201]
+                    },
+                    {
+                        name: "Science Club", coordinator: "Dr. Amina Yusuf", members: [101]
+                    }
+                ],
+                schoolCalendar: [
+                    {
+                        term: "First Term", startDate: "2025-09-09", endDate: "2025-12-15", events: [
+                            { title: "Orientation Day", date: "2025-09-09" },
+                            { title: "Midterm Break", date: "2025-10-25" }
+                        ]
+                    },
+                    {
+                        term: "Second Term", startDate: "2026-01-08", endDate: "2026-04-10", events: [
+                            { title: "Sports Day", date: "2026-02-15" },
+                            { title: "Cultural Day", date: "2026-03-20" }
+                        ]
+                    }
+                ]
+            }
+        ]
+
+
+
+        const displayInfo = () => {
+
+            schoolData.forEach((obj,) => {
+                schoolNameEl.innerHTML += `
+                <h2>${obj.name}</h2>
+            `
+                schoolAddressEl.innerHTML += `
+             <p>${obj.address.street}, ${obj.address.city}, ${obj.address.state}, ${obj.address.country}</p><br>
+            `
+
+                obj.departments.map((ele, index) => {
+                   departmentsEl.innerHTML += `
+                    <h4>${ele.name}</h4>
+                     <p style="margin-left:30px";>${ele.classes[0].name} - ${ele.classes[0].teacher}</p>
+                     <p style="margin-left:60px";>${ele.classes[0].students[0].name} (${ele.classes[0].students[0].gender}, Age: ${ele.classes[0].students[0].age})</p>
+                   `
+                })
+
+                
+                // <h4>${ele.name} (Head:${ele.head.name})</h4>
+                // <p style="margin-left:30px";>${ele.classes[0].name} - ${ele.classes[0].teacher}</p>
+                // <p style="margin-left:60px";>${ele.classes[0].students[0].name} (${ele.classes[0].students[0].gender}, Age: ${ele.classes[0].students[0].age})</p>
+                // <p style="margin:-10px 0 0 60px";>Grades - Term1: ${ele.classes[0].students[0].grades.term1}, Term2: ${ele.classes[0].students[0].grades.term2}, Term3: ${ele.classes[0].students[0].grades.term3}</p>
+                // departmentsEl.innerHTML += `
+                // <h4>${ele.name} (Head:${ele.head.name})</h4>
+                // <p style="margin-left:30px";>${obj.departments[0].classes[0].name} - ${obj.departments[0].classes[0].teacher}</p>
+                // <p style="margin-left:60px";>${obj.departments[0].classes[0].students[0].name} (${obj.departments[0].classes[0].students[0].gender}, Age: ${obj.departments[0].classes[0].students[0].age})</p>
+                // <p style="margin:-10px 0 0 60px";>Grades - Term1: ${obj.departments[0].classes[0].students[0].grades.term1}, Term2: ${obj.departments[0].classes[0].students[0].grades.term2}, Term3: ${obj.departments[0].classes[0].students[0].grades.term3}</p>
+                // <p style="margin:30px 0 -10px 60px";>${obj.departments[0].classes[0].students[1].name} (${obj.departments[0].classes[0].students[1].gender}, Age: ${obj.departments[0].classes[0].students[1].age})</p>
+                //  <p style="margin-left:60px";>Grades - Term1: ${obj.departments[0].classes[0].students[1].grades.term1}, Term2: ${obj.departments[0].classes[0].students[1].grades.term2}, Term3: ${obj.departments[0].classes[0].students[1].grades.term3}</p>
+
+                //  <h4>${obj.departments[1].name} (Head:${obj.departments[1].head.name})</h4>
+                //   <p style="margin-left:30px";>${obj.departments[1].classes[0].name} - ${obj.departments[1].classes[0].teacher}</p>
+                //   <p style="margin-left:60px";>${obj.departments[1].classes[0].students[0].name} (${obj.departments[1].classes[0].students[0].gender}, Age: ${obj.departments[1].classes[0].students[0].age})</p>
+                //   <p style="margin:-10px 0 0 60px";>Grades - Term1: ${obj.departments[1].classes[0].students[0].grades.term1}, Term2: ${obj.departments[1].classes[0].students[0].grades.term2}, Term3: ${obj.departments[1].classes[0].students[0].grades.term3}</p>
+                // `
+
+
+                clubsEl.innerHTML += `
+            <h4 style="margin-left:30px";>${obj.clubs[0].name}</h4>
+            <p style="margin:-20px 0 0 30px";>Coordinator: ${obj.clubs[0].coordinator}</p>
+            <p style="margin:2px 0 0 30px";>Member IDs: ${obj.clubs[0].members}</p>
+
+            <h4 style="margin-left:30px";>${obj.clubs[1].name}</h4>
+            <p style="margin:-20px 0 0 30px";>Coordinator: ${obj.clubs[1].coordinator}</p>
+            <p style="margin:2px 0 0 30px";>Member IDs: ${obj.clubs[1].members}</p>
+            `
+
+                calendarEl.innerHTML += `
+            <p>${obj.schoolCalendar[0].term} (${obj.schoolCalendar[0].startDate} to ${obj.schoolCalendar[0].endDate})</p>
+            <p style="margin:-8px 0 0 30px";>${obj.schoolCalendar[0].events[0].date} - ${obj.schoolCalendar[0].events[0].title}</p>
+            <p style="margin:30px 0 0 30px";>${obj.schoolCalendar[0].events[1].date} - ${obj.schoolCalendar[0].events[1].title}</p>
+
+            <p>${obj.schoolCalendar[1].term} (${obj.schoolCalendar[1].startDate} to ${obj.schoolCalendar[1].endDate})</p>
+            <p style="margin:-8px 0 0 30px";>${obj.schoolCalendar[1].events[0].date} - ${obj.schoolCalendar[1].events[0].title}</p>
+            <p style="margin:30px 0 0 30px";>${obj.schoolCalendar[1].events[1].date} - ${obj.schoolCalendar[1].events[1].title}</p>
+            `
+            })
+        }
+
+        displayInfo();
+
+    </script>
+</body>
+
+</html>

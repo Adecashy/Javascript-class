@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="products">
+
+    </div>
+
+
+    <script>
+
+        // const names = ["peter", "ade", "sola"]
+        // names.forEach((ele, index)=>{
+        //     console.log(ele)
+        //     console.log()
+        // })
+
+        const productsEl = document.getElementById("products")
+        const productsList = [
+            {
+                name: "Nike shoe 12", price: 5000, isAvailable: false, colors: [
+                    { color1: "red", color2: "pink", color3: "blue" }
+                ]
+            },
+            {
+                name: "Nike shoe 13", price: 5000, isAvailable: true, colors: [
+                    { color1: "red", color2: "green", color3: "blue" }
+                ]
+            },
+            {
+                name: "Nike shoe 14", price: 5000, isAvailable: false, colors: [
+                    { color1: "red", color2: "yellow", color3: "blue" }
+                ]
+            },
+            {
+                name: "Nike shoe 15", price: 5000, isAvailable: true, colors: [
+                    { color1: "red", color2: "orange", color3: "blue" }
+                ]
+            },
+            {
+                name: "Nike shoe 16", price: 5000, isAvailable: false, colors: [
+                    { color1: "red", color2: "brown", color3: "blue" }
+                ]
+            },
+
+        ]
+
+     
+
+        // condition  ? instruction : alternative instruction
+        // 5 < 4  ? console.log("hi") : console.log("gg")
+
+
+        const displayProducts = () => {
+
+            productsList.forEach((ele, ) => {
+                productsEl.innerHTML += `
+                    <div style="background: ${ele.isAvailable ? "green" : "red"};">
+                        <h2>${ele.name}</h2>
+                        <p>$${ele.price}</p>
+                        <button style="background: ${ele.colors[0].color2};">color</button>
+                    </div>
+                `
+            })
+        }
+
+        displayProducts()
+
+
+
+    </script>
+
+    <script>
+        // index element
+        const usersNames = ["peter", "ade", "john", "hih"] // square bracket
+        console.log(usersNames[2])
+
+        const user = { name: "james", phone: 8989899889, address: "Nigeria", isLoggedIn: false, history: ["mr beast video", "how to make money", "how to learn javascrip even though i'm already a pro"] } // curly braces => key: value
+
+        const products = [
+            {
+                name: "Nike shoe 12", price: 5000, isNegotiable: false, colors: [
+                    { color1: "red", color2: "green", color3: "blue" }
+                ]
+            },
+            {
+                name: "Gucci", price: 400, isNegotiable: true, colors: [
+                    { color1: "pink", color2: "indigo", color3: "green" }
+                ]
+            },
+            {
+                name: "Zara", price: 500, isNegotiable: false, colors: [
+                    { color1: "red", color2: "green", color3: "blue" }
+                ]
+            },
+            {
+                name: "Nike shoe 12", price: 5000, isNegotiable: false, colors: [
+                    { color1: "red", color2: "green", color3: "blue" }
+                ]
+            },
+        ]
+
+        console.log(products[1]);
+        console.log(products[1].color2)
+        console.log(products[1].colors[1])
+        console.log(products[1].colors[0].color2)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            border: 3px solid black;
+            height: 250px;
+            width: 250px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="inp">
+    <button onclick="changeColor()">Change Color</button>
+    <div id="box"></div>
+
+    <script>
+        function changeColor() {
+            if (inp.value == 1) {
+                box.style.background = "blue"
+            }
+            else if (inp.value ==2) {
+                box.style.background = "red"
+            }
+            else if (inp.value == 3) {
+                box.style.background = "green"
+            }
+            else if (inp.value == 4) {
+                box.style.background = "purple"
+            }
+            else if (inp.value == 5) {
+                box.style.background = "yellow"
+            }
+            else if (inp.value == 6) {
+                box.style.background = "#c8a2c8"
+            }
+            else if (inp.value == 7) {
+                box.style.background = "indigo"
+            }
+            else {
+                box.style.background = "none"
+            }
+        }
+
+    </script>
+</body>
+</html>

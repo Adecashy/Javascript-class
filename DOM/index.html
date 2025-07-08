@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Display</button>
+    <h1>This is a heading tag</h1>
+    
+    <div>
+        <p class="greeting">Happy weekend</p>
+        <p class="greeting">Hello class</p>
+        <p>Hello everyone</p>
+        <p class="greeting">Hello everyone</p>
+    </div>
+
+    <div id="display"></div>
+
+
+    <input type="text" id="inp">
+
+    <section id="styling">Style this element section</section>
+
+    <input type="text" id="myInp">
+
+
+    <script>
+        // document.createElement()
+        // let getH1 = document.getElementById("heading");
+        // console.log(getH1);
+
+        // let getTagname = document.getElementsByTagName("p");
+        // console.log(getTagname);
+
+        // let getClass = document.getElementsByClassName("para");
+        // console.log(getClass);
+
+        // let changeContent = document.getElementsByClassName("greeting");
+        // console.log(changeContent);
+
+        // document.getElementById("display").innerHTML = changeContent[2].innerHTML;
+        //  document.getElementById("display").innerHTML = changeContent[0].innerHTML;
+        
+        // changeContent.innerHTML = "Good morning";
+        // console.log(changeContent.innerHTML);
+        
+        // function myFunc() {
+        //     let getInput = document.getElementById("inp");
+        //     console.log(getInput);
+        // }
+        
+        document.getElementById("inp").type = "submit";
+
+        let myStyle = document.getElementById("styling");
+        myStyle.style.color = "blue";
+        myStyle.style.backgroundColor = "#000";
+        myStyle.style.textDecoration = "underline";
+        myStyle.style.padding = "20px 10px";
+
+        let myInput = document.getElementById("myInp");
+        let output = myInput.setAttribute("type", "password");
+        console.log(myInput.type);
+
+        //Create element
+        let createEl = document.createElement("p");
+        createEl.innerHTML = "This is my paragraph tag";
+        createEl.setAttribute("id", "para");
+        createEl.setAttribute("class", "paraClass");
+        console.log(createEl);
+
+        
+
+        // addEventListener
+
+        // function myFunc() {
+        //     console.log("Hey");
+            
+        // }
+        
+
+        btn.addEventListener("Click", () => {
+            console.log("Hey");
+        })
+        
+    </script>
+</body>
+</html>

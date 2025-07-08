@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       body{
+        background: purple;
+       }
+       .input-box{
+        background-color: #fff;
+        width: 90%;
+        max-width: 500px;
+        padding: 10px 20px;
+        margin: 300px auto;
+        display: flex;
+        align-items: center;
+       }
+       .input-box input{
+        width: 10%;
+        padding: 10px 0;
+        border: 0;
+        outline: 0;
+        font-size: 24px;
+        color: #555;
+       }
+       .input-box{
+        width: 50px;
+        cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="input-box">
+        <input type="password" placeholder="password" id="password">
+        <img src="../images/eye-slash-regular.svg" alt="" id="eyeClose">
+    </div>
+
+    <script>
+        let userPassword = document.getElementById("password");
+        let closedIcon = document.getElementById("eyeClose");
+
+        closedIcon.onclick = function () {
+            if (userPassword.type == "password") {
+                userPassword.type = "text";
+            }
+            else {
+                userPassword.type = "password";
+                closedIcon.src = "../images/eye-regular.svg";
+            }
+        }
+    </script>
+</body>
+</html>

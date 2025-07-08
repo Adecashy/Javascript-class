@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge Airtime</title>
+</head>
+<style>
+    header {
+        text-align: center;
+        margin: auto;
+    }
+    .recharge{
+        display: flex;
+        flex-direction: row;
+        padding: 3rem;
+        border: 1px solid;
+        width: 90%;
+        margin: auto;
+        /* text-align: center; */
+        gap: 5rem;
+    }
+    .recharge .recharge-left, .recharge .recharge-right{
+        width: 50%;
+    }
+    .recharge select{
+        padding: 1rem;
+        display: block;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        cursor: pointer;
+    }
+    .recharge input{
+        padding: 1rem;
+        display: block;
+        border-radius: 5px;
+        width: 93.4%;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+    .recharge button{
+        padding: 1rem;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        cursor: pointer;
+        background-color: mediumseagreen;
+        text-shadow: 0 0 5px black;
+        color: #fff;
+        border: none;
+    }
+    th, td{
+        padding: 0.5rem 2.8rem;
+    }
+    .history table{
+        margin: auto;
+        width: 100%;
+    }
+</style>
+<body>
+    <header>
+        <h1>Recharge Card</h1>
+    </header>
+    <section class="recharge">
+        <section class="recharge-left">
+            <div>
+                <label for="select-network">Choose Network</label>
+                <select name="" id="select-network">
+                    <option value="">Select Network</option>
+                    <option value="mtn">MTN</option>
+                    <option value="glo">Glo</option>
+                    <option value="airtel">Airtel</option>
+                    <option value="9mobile">9Mobile</option>
+                </select>
+            </div>
+            <div>
+                 <label for="select-amount">Select Amount</label>
+                <select name="" id="select-amount">
+                    <option value="">Select Amount</option>
+                    <option value="1000">1000</option>
+                    <option value="500">500</option>
+                    <option value="200">200</option>
+                    <option value="100">100</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div>
+                <label for="generate-pin">Generate Pin</label>
+                <input type="text" placeholder="Generate Pin" id="generated-pin" disabled>
+            </div>
+            <div>
+                <button id="generate-btn">Generate</button>
+            </div>
+        </section>
+        <section class="recharge-right">
+            <label for="insert-pin">Insert Pin Below</label>
+            <div>
+                <input type="text" placeholder="Pin" id="insert-pin">
+            </div>
+            <div>
+                <button id="recharge-btn">Recharge Card</button>
+            </div>
+        </section>
+    </section>
+    <section class="history">
+        <table border="1" style="border-collapse: collapse; margin-top: 2rem;">
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Network</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Pin</th>
+                    <th>PrintRef</th>
+                    <th>Status</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="card-details">
+                
+            </tbody>
+        </table>
+    </section>
+
+    <script src="./recharge.js"></script>
+</body>
+</html>

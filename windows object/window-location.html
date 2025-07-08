@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windw</title>
+</head>
+<body>
+    <h1>Window location</h1>
+    <button id="redirect">Redirect</button>
+
+    <script>
+        const redirectBtn = document.getElementById("redirect")
+        const params = new URLSearchParams(window.location.search)
+        const name = params.get("id")
+        console.log(name);
+        
+
+        const redirectToYoutube = () =>{
+            // window.location.href = "https://youtube.com"
+            // window.location.reload()
+            // const pathName = window.location.pathname
+            // console.log(pathName);
+            
+        }
+
+        redirectBtn.addEventListener("click", redirectToYoutube)
+    </script>
+</body>
+</html>

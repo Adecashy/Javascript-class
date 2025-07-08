@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let myName = "Adeola"; //global variable: can be access anywhere on the program
+
+        function getName() {
+            console.log(myName);
+            
+        }
+        getName(); //invoking
+
+        console.log(myName); //Adeola
+
+
+        function localVar() {
+            let myGender = "Female"; //local variable: can be access within the function and not outside the function
+            console.log(myGender);
+            
+        }
+
+        localVar();
+        // console.log(myGender);
+
+
+        // function parent() {
+        //     console.log("This is a parent function");
+            
+        //     (function nested() {
+        //         console.log("Nested function");
+                
+        //     })();
+        // }
+        
+
+        function nested() {
+            console.log("Nested function");
+            
+        }
+
+        function parent() {
+            console.log("This is a parent function");
+            
+            nested();
+        }
+
+        parent(); //This is a parent function.
+
+        if (true) {
+            let greet = "Good morning"; //local variable
+            console.log(greet);
+            console.log(myName);
+            
+            
+            // console.log("It is false")
+        }
+
+        // console.log(greet);
+    </script>
+</body>
+</html>

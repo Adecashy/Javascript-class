@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input oninput="displayUppercase()" type="text" id="inp">
+    <div id="displayInput"></div> -->
+    <!-- string -->
+    <script>
+        
+        let str = "This is my school";
+        //replaceAll()
+        let text = str.replaceAll(" ", "-");
+        console.log(text);
+
+        //split method
+        // console.log(str.split(""));
+        // console.log(str.length);
+
+        //indexOf
+        // console.log(str.indexOf("o"));
+        // consle.log(str.lastIndexOf("i"));
+
+        //includes()
+        // console.log(str.includes("i"));
+
+        //declaration function
+        // function student(params) {
+        //     console.log("I am a student");
+            
+        // }
+        // student();
+
+        //expression function
+        // const myFunc = function(){
+        //     console.log("How are you doing?");
+            
+        // }
+        // console.log(myFunc());
+
+        // const myFunc = () => {
+        //     console.log("Thank you");
+            
+        // }
+        // console.log(myFunc());
+
+        (() => {
+            console.log("Thank you");
+            
+        })();
+        
+        let names = ["Grace", "Helen", "Segun", "Tope"];
+        // console.log(myArray);
+        // console.log(myArray[1]);
+        // myArray[1] = "Damilare";
+        // console.log(myArray.splice(1, 1, "Damilare"));
+
+
+        // for (let i = 0; i <= myArray.length; i++) {
+        //      console.log("hey");
+    
+        // }
+        //foreach
+        // names.forEach(name, i, array)=> {
+        //     console.log(name);
+        
+        // })
+
+        function myNames() {
+            console.log("hey");
+            
+        }
+        names.forEach(myNames)
+
+        function greet() {
+            console.log("Hello");
+            return 2;
+        }
+        greet();
+
+        names.forEach((name, ind) => {
+            
+        });
+
+        function myProduct(x, y) {
+            // console.log(x * y);
+            return x * y;
+        }
+
+        let result = myProduct(2, 6);
+        console.log(result);
+
+
+        let index = 5;
+        do {
+            console.log(index);
+            if (index == 3) {
+                break; 
+            }
+            index--;
+        } while (index >= 0);
+        
+
+        
+        
+        //  let myInp = document.getElementById("inp");
+        // function displayUppercase() {
+        //     displayInput.innerHTML = myInp.value.toUpperCase();
+        // }
+        let myName = "Tope";
+        myName = " Opeyemi";
+        // let getLength = myName.length;
+        // console.log(getLength);
+        
+        // console.log(myName);
+        
+        //string method
+        //toupperCase()
+        // let uppercase = myName.toUpperCase();
+        // let lowercase = myName.toLowerCase();
+        // console.log(lowercase);
+
+
+        //Charat()
+        let greeting = "Good morning everyone";
+        let replaceGreet = greeting.replace("everyone", "class");
+        console.log(replaceGreet);
+
+
+        //Array is used to store multiple values. Array is cllection of ordered list
+        // let myArr = [1, 2, 3, 4, 5];
+        let fruits = ["banana", "apple", "orange", "water melon"];
+        //Array methods
+        // splice
+        // let newVal = fruits.splice(0, 1);
+        //push: add to existing items in your array
+        // fruits.push("Cashew");
+        //pop(): remove an item from your array
+        // let popItem = fruits.pop();
+        // console.log(popItem);
+        // let shiftItem = fruits.shift();
+        // console.log(shiftItem);
+        // console.log(fruits);
+
+
+        //unshift()
+        // let unshiftItem = fruits.unshift("mango");
+        // console.log(fruits);
+
+        // slice()
+        // let sliceFruits = fruits.slice(0, 2);
+        // let spliceFruits = fruits.splice(1, 1);
+        // console.log(spliceFruits);
+
+
+        // console.log(fruits);
+
+        let numberArr = [1, 2, 3, 4, [5, 6, 7, [8, 9, 0]]];
+        // let numberArr = [1, 2, 3, 4, [5, 6, 7, []], {age: 12, name: "segun"}, "", true];
+        // console.log(numberArr.length);
+        console.log(numberArr,flat(2));
+        // console.log(numberArr[4][1]);
+
+
+
+        // console.log(newVal);
+        // console.log(fruits);
+        
+        
+
+
+        // let sliceGreeting = greeting.slice(0, -2);
+        // let substringGreeting = greeting.substring(0, -3);
+        // console.log(substringGreeting);
+
+        // let trimGreeting = greeting.trim();
+
+        // console.log(trimGreeting.concat(myName));
+        
+        // console.log(greeting.trimEd());
+
+        // console.log(greeting.length);
+
+        //console.log(greeting.charAt(7));
+
+
+    </script>
+</body>
+</html>

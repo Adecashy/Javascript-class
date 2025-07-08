@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 250px;
+            border: 2px solid;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="display">0</div>
+        <br>
+        <button onclick="decrease()">Decrement</button>
+        <button onclick="increase()">Increment</button>
+        <p id="increaseClick">Clicks on increment:</p>
+        <p id="decreaseClick">Clicks on decrement:</p>
+    </div>
+
+
+    <script>
+        let count = 0;
+        let displayResult = document.getElementById("display");
+        let noOfIncrease = 0;
+        let noOfDecrease = 0;
+        function increase() {
+            if (count < 10) {
+                displayResult.innerHTML = ++count;
+            }
+            noOfIncrease += 1;
+            if (noOfIncrease <= 10) {
+                increaseClick.innerHTML = "Clicks on increment: " + noOfIncrease;
+            }
+            
+        }
+        function decrease() {
+           if (count > 0) {
+                displayResult.innerHTML = --count;
+           }
+           noOfDecrease += 1;
+           if (noOfDecrease <= 10) {
+               decreaseClick.innerHTML = "Clicks on decrement: " + noOfDecrease;
+           }
+        }
+    </script>
+</body>
+</html>

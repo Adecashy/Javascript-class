@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object</title>
+</head>
+
+<body>
+    <h1>Math Object</h1>
+
+
+    <input type="text" name="" id="input">
+    <select name="" id="select-airtime">
+        <option value="">Select network</option>
+        <option value="mtn">Mtn</option>
+        <option value="airtel">Airtel</option>
+        <option value="glo">Glo</option>
+        <option value="9mobile">9Mobile</option>
+    </select>
+    <button id="btn">click</button>
+
+    <script>
+
+        const inputEl = document.getElementById("input")
+        const selectEl = document.getElementById("select-airtime")
+        const btn = document.getElementById("btn")
+        
+        btn.addEventListener("click", ()=>{
+            if(!selectEl.value){
+                alert("Select an airtiem")
+                return
+            }
+            console.log(inputEl.value)
+            console.log(selectEl.value)
+        })
+
+
+
+        // MATH OBJECT
+        // Math.random() Return a random float number between 0 - 1. 1 excluded.
+
+        console.log(Math.random() * 10)
+        // Math.round(x)	Returns x rounded to its nearest integer
+        console.log(Math.round(2.1))
+        // Math.ceil(x)	Returns x rounded up to its nearest integer
+        console.log(Math.ceil(9.1))
+        // Math.floor(x)	Returns x rounded down to its nearest integer
+        console.log(Math.floor(9.8))
+        // Math.trunc(x)	Returns the integer part of x (new in ES6)
+        console.log(Math.trunc(9.2))
+
+        console.log(Math.ceil(Math.random() * 9999999999999))
+        console.log(Math.floor(Math.random() * 8))
+        console.log(Math.round(Math.random() * 9))
+        console.log(Math.trunc(Math.random() * 78))
+    </script>
+</body>
+
+</html>

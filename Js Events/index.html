@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Event -->
+     <!-- mouse event  -->
+      <!-- <button onmouseleave="alert('Hello')">Click me</button> -->
+       <!-- keyboard event -->
+       <!-- <input type="text" onkeyup="console.log('hello')"> -->
+
+       <!-- uneditable container -->
+        <!-- <p id="greeting">Welcome to class</p> -->
+
+        <!-- editable container -->
+         <!-- <input type="text" value="hello" id="inp"> -->
+          
+         <!-- JS function -->
+
+       <input type="text" id="inp" oninput="dislayContent()">
+       <h1 id="demo"></h1>
+
+       <input type="text" id="first" onkeyup="console.log('hello');
+       ">
+
+       <button onclick="calculate()">Calculate</button>
+       <button onclick="calculate()">Calculate</button>
+       <button onclick="calculate()">Calculate</button>
+
+       <script>
+        // function declaration
+        function calculate() {
+            console.log(10 + 5 * 4);
+            
+        }
+        function dislayContent() {
+             demo.innerHTML = inp.value;
+        }
+
+        // parameterized function
+        function add(num1, num2) {
+            console.log(num1 + num2);
+            
+        }
+
+        add(10, 5)
+
+
+       </script>
+</body>
+</html>

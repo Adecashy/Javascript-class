@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Objects</title>
+</head>
+<body>
+    
+    <h1>Windows 0bject</h1>
+
+    <div>
+        <input type="email" id="email-input">
+        <button id="submit-btn">Submit</button>
+    </div>
+
+    <p id="email-paragraph"></p>
+
+    <script>
+  
+
+        const emailInputEl = document.getElementById("email-input")
+        const submitButtonEl = document.getElementById("submit-btn")
+        const emailParagraphEl = document.getElementById("email-paragraph")
+
+        function saveEmail(){
+            // retrieve the email value
+            const email = emailInputEl.value
+            // save the email into localStorage
+            localStorage.setItem("email", email)
+           getEmail()
+        }
+     
+        // invoke the saveEmail function when button is clicked
+        submitButtonEl.addEventListener("click", saveEmail)
+
+
+
+        // CREATE A FUNCTION THAT:
+
+        function getEmail(){
+                // gets the email back from the localstorage 
+                const gottenEmail = localStorage.getItem("email")
+                //  renders it on the email paragraph 
+                emailParagraphEl.textContent = gottenEmail
+
+            }
+
+getEmail()
+
+
+
+
+            // const userEmail = localStorage.getItem("email")
+
+
+
+
+
+
+        // log the email that was gotten from localStorage
+        // console.log(userEmail)
+
+    const user = {
+        name:"jhames",
+        age: 89
+    }
+
+        const usersNames = ['ade', 'sole']
+
+        localStorage.setItem("names", JSON.stringify(usersNames))
+        localStorage.setItem("user", JSON.stringify(user))
+
+        const usersNamesFromStroage = JSON.parse(localStorage.getItem("names"))
+        const userFromStorage = JSON.parse(localStorage.getItem("user"))
+
+
+      // json => javascrip object notation
+
+        console.log(usersNamesFromStroage)
+        console.log(userFromStorage)
+
+
+
+
+
+
+
+        // LOCAL STORAGE
+        // const useridEl = document.getElementById("userName")
+
+        // const userNameInputEl = document.getElementById("name")
+        // const buttonEl = document.getElementById("submit")
+
+        // const saveUsername = ()=>{
+        //     localStorage.setItem("username", userNameInputEl.value)
+        // }
+
+        // buttonEl.addEventListener("click", saveUsername)
+
+        // create a function that 
+            // save the value of the input into the localstorage, 
+           
+           
+            // localStorage.setItem()
+            // localStorage.setItem("key", "value")
+            // localStorage.getItem("key")
+            // localStorage.removeItem("key")
+            // localStorage.clear()
+           
+           
+           
+           
+           
+           
+
+
+
+
+
+           
+           
+        
+        
+
+
+
+    </script>
+
+</body>
+</html>
