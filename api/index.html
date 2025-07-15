@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API</h1>
+
+    <img src="" id="image" alt="">
+    <input type="file"  >
+
+    <script>
+        // Application Programming Interface
+        // HTTP = HyperText Transfer Protocol
+        // request url                      
+                                        // update
+                            // CRUD = Create, Read, Update, Delete
+        // request method:  POST, GET, PATCH / PUT, DELETE
+        // request body: 
+        // FETCH API
+
+        // const request = {
+        //     requester: "peter",
+        //     requested: "jesutofunmi",
+        //     status: "pending"
+        // }
+        
+
+        // const product = {
+        //     name: "Dooris ",
+        //     price: 600,
+        //     category: "fashion"
+        // }
+
+        // {price: 800}
+
+    </script>
+
+    <script>
+        // fetch(url:string, options:object)
+        // fetch("https://jumia.com/product/098gyvud", {
+        //     method:"",
+        //     body: [{name: "Jeans", price: 800}, {isub}]
+        // })
+
+        // asynchronous (async & await) / synchronous
+        // try/catch/finally
+
+        const imageEl =document.getElementById("image")
+
+        
+        async function getProducts(){
+            console.log("loading..")
+           try {
+             const response = await fetch("../product.json")
+            const data = await response.json()
+            console.log(data)
+           } catch(error){
+            console.log(error)
+           } finally {
+            console.log("Stop")
+           }
+        }
+        getProducts()
+
+        const getImage = async () =>{
+            const res = await fetch("../images/girl.jpeg")
+            const data = await res.blob()
+            const url = URL.createObjectURL(data)
+            imageEl.src = url
+            console.log(data)
+            console.log(url)
+        }
+        getImage()
+
+        const getUsers = async () =>{
+
+        }
+ 
+    </script>
+</body>
+</html>

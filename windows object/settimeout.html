@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set time out & interval</title>
+</head>
+
+<style>
+    .time {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.3rem;
+        border: 1px solid;
+        border-radius: 8px;
+        padding: 1rem;
+        max-width: 100px;
+    }
+</style>
+
+<body>
+
+    <!-- <button id="stop-btn">Stop</button>
+    <button id="start-btn">Start</button>
+    <ul id="counts">
+
+    </ul> -->
+    <h1>Date Constructor</h1>
+
+    <div class="time">
+        <p id="hour-el"></p>
+        <span>:</span>
+        <p id="min-el"></p>
+        <span id="sec-el"></span>
+    </div>
+
+    <div>
+        <input type="time" name="" id="alarm-el">
+        <button id="set-alarm-btn">Set alarm</button>
+
+        <input type="text" placeholder="snooze" id="snooze" oninput="snoozeAlarm()">
+    </div>
+
+    <script>
+        const countsEl = document.getElementById("counts")
+        const startBtnEl = document.getElementById("start-btn")
+        const stopBtnEl = document.getElementById("stop-btn")
+        let count = 0;
+
+        const startCouting = () => {
+            const countInterval = setInterval(() => {
+                count++
+                countsEl.innerHTML += `
+                    <li>${count}</li>
+                `
+            }, 1000)
+
+
+            stopBtnEl.addEventListener("click", () => {
+                clearInterval(countInterval)
+            })
+        }
+
+
+
+        // startBtnEl.addEventListener("click", startCouting)
+
+        // <!-- SET TIMEOUT -->
+        setTimeout(() => {
+            console.log("welcome")
+        }, 1000 * 7)
+
+        // <!-- SET INTERVAL -->
+        // const interval = setInterval(()=>{
+        //     console.count("hello")
+        // }, 1000)
+
+        // setTimeout(()=>{
+        //     clearInterval(interval)
+        // }, 1000 * 5)
+
+    </script>
+
+    <script>
+        const hourEl = document.getElementById("hour-el")
+        const minEl = document.getElementById("min-el")
+        const secEl = document.getElementById("sec-el")
+        const alermEl = document.getElementById("alarm-el")
+        const setAlarmBtnEl = document.getElementById("set-alarm-btn")
+        const snoozeEl = document.getElementById("snooze")
+        const now = new Date()
+
+        setInterval(() => {
+            const now = new Date()
+            hourEl.textContent = now.getHours()
+            minEl.textContent = now.getMinutes()
+            secEl.textContent = now.getSeconds()
+            // console.log(now.getSeconds())
+        }, 1000)
+
+        // const name = '12:57'
+        // console.log(name.split(":")[1])
+
+        const setAlarm = () =>{
+            const data = alermEl.value
+            const hour = data.split(":")[0]
+            const min = data.split(":")[1]
+            const sec = 0
+
+            setInterval(()=>{
+                const now = new Date()
+                if(min == now.getMinutes() && hour == now.getHours() && sec == now.getSeconds()){
+                    alert("Wake up!!!")
+                }
+            }, 1000)
+
+            // setInterval(()=>{
+            //     if(`${data}0` === `${hourEl.textContent}:${minEl.textContent}${secEl.textContent}`){
+            //     alert("wakeup")
+            // }   
+            // }, 1000)
+        }
+
+
+        setAlarmBtnEl.addEventListener("click", setAlarm)
+
+
+        const snoozeAlarm = () =>{
+            const data = alermEl.value
+            const snoozeData = snoozeEl.value
+            const min = data.split(":")[1]
+            const sec = 0
+            const newData = Number(snoozeData) + Number(min)
+            console.log(newData);
+
+            setInterval(() => {
+                const now = new Date()
+                if (newData == now.getMinutes() && sec == now.getSeconds()) {
+                    alert("wake up!!!")
+                }
+            }, 1000);
+            
+        }
+
+
+
+           // const alarm = {
+        //     hour: 11,
+        //     min: 40,
+        //     sec: 0
+        // }
+
+        // const checkTime = () =>{
+        //    console.log('checking...');
+        //    if(alarm.hour == now.getHours() && alarm.min == now.getMinutes() && alarm.sec == now.getSeconds()){
+        //         console.log("wake up!!");
+        //    }
+        // }
+
+        // setInterval(()=>{
+        //     checkTime()
+        // }, 1000)
+
+
+
+
+
+
+
+        console.log(now)
+        console.log(now.getDate())
+        console.log(now.getDay())
+        console.log(now.getMonth())
+        console.log(now.getFullYear())
+        console.log(now.getMinutes())
+
+        console.log(now.getHours())
+        console.log(now.getSeconds())
+
+    </script>
+</body>
+
+</html>

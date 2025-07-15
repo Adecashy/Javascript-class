@@ -165,6 +165,7 @@ const products = [
     }
 ];
 
+// localStorage.setItem("products", JSON.stringify(products))
 
 
 const display = (productsArray=products) => {
@@ -201,7 +202,7 @@ const showSingleProduct = (id)=>{
     const singleProductEl = document.querySelector(".single-product")
     // find the product with that id
     const Product = products.find(ele => ele.id === id)
-    // dislay it n the single roduct card
+    // display it in the single product card
     singleProductEl.innerHTML = `
         <div class="product-card" >
                 <h2>${Product.name}</h2>

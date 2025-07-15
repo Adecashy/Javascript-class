@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mre Array Methds</title>
+    <title>More Array Methds</title>
 
     <style>
+        header{
+            display: flex;
+            gap: 30rem;
+        }
+        span{
+            background-color: brown;
+            color: antiquewhite;
+            border: 1px solid;
+            width: 40px;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+            border-radius: 100%;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
         .container{
             display: flex;
             gap: 6rem;
@@ -31,7 +47,7 @@
 <body>
     <header>
         <h1>Logo</h1>
-        <span>3</span>
+        <span id="cart" onclick="redirectToCart()"></span>
     </header>
     <input type="search" placeholder="start typing...." id="search-input">
 

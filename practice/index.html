@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time{
+            display: flex;
+            align-items: center;
+            border: 1px solid;
+            border-radius: 5px;
+            padding: 1rem;
+            max-width: 100px;
+            font-size: 1.5rem;
+            gap: 10px;
+        }
+        body{
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #5f9341;
+        }
+        button{
+            background: #5f9341;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <ul id="list">
+
+    </ul> -->
+
+    <!-- <div class="time">
+        <p id="hour"></p>
+        <span>:</span>
+        <p id="min"></p>
+        <p id="sec"></p>
+    </div>
+
+    <div>
+        <input type="time" id="settime">
+        <button id="btn">Set Alarm</button>
+        <input type="text" placeholder="snooze" id="snooze" oninput="snoozeAlarm()">
+    </div> -->
+
+    <div id="apple-shelf"></div>
+    <div id="orange-shelf"></div>
+
+    <input type="text" id="input-el">
+    <button id="input-btn">SAVE INPUT</button>
+    <div>
+        <ul id="ul-el"></ul>
+    </div>
+    <script>
+        // const startBtnEl = document.getElementById("startBtn")
+        // const stopBtnEl = document.getElementById("stopBtn")
+        // const listEL = document.getElementById("list")
+        // let count = 0
+
+        // const startCounting = () =>{
+        //     const countInterval = setInterval(() => {
+        //         count++
+        //         listEL.innerHTML += `
+        //             <li>${count}</li>
+        //         `
+        //     }, 1000);
+
+        //     stopBtnEl.addEventListener("click", () =>{
+        //         clearInterval(countInterval)
+        //     })
+        // }
+
+        // startBtnEl.addEventListener("click", startCounting)
+    </script>
+
+    <script>
+        // const hourEl = document.getElementById("hour")
+        // const minEl = document.getElementById("min")
+        // const secEL = document.getElementById("sec")
+        // const timeEl = document.getElementById("settime")
+        // const snoozeEl = document.getElementById("snooze")
+        // const btnEL = document.getElementById("btn")
+        // const set = new Date()
+
+        // setInterval(() => {
+        //     const set = new Date()
+        //     hourEl.textContent = set.getHours()
+        //     minEl.textContent = set.getMinutes()
+        //     secEL.textContent = set.getSeconds()
+        // }, 1000);
+
+        // const setAlarm = () =>{
+        //     const setAlarm = timeEl.value
+        //     // console.log(setAlarm);
+        //     const hour = setAlarm.split(":")[0]
+        //     const min = setAlarm.split(":")[1]
+        //     // console.log(min);
+        //     const sec = 0
+        //     setInterval(() => {
+        //         const set = new Date()
+        //         if (hour == set.getHours() && min == set.getMinutes() && sec == set.getSeconds()) {
+        //         alert("Wake up")
+        //     }
+        //     }, 1000);
+        // }
+
+        // const snoozeAlarm = ()=>{
+        //     const setAlarm = timeEl.value
+        //     const alarmSnooze = snoozeEl.value
+        //     const min = setAlarm.split(":")[1]
+        //     const data = Number(min) + Number(alarmSnooze)
+        //     console.log(data);
+            
+        //     const sec = 0
+        //     setInterval(() => {
+        //         const set = new Date()
+        //         if (data == set.getMinutes() && sec == set.getSeconds()) {
+        //             alert("wake up")
+        //         }
+        //     }, 1000);
+        // }
+
+        // btnEL.addEventListener("click", setAlarm)
+    </script>
+
+    <script>
+
+        let randomNumber = Math.floor(Math.random() * 13) + 1
+        function getRandomCard() {
+            return randomNumber
+        }
+
+        console.log(getRandomCard());
+
+        let hasSolvedChallenge = "false"
+        let hasHintsLeft = "false"
+
+        if (hasSolvedChallenge === "false" && hasHintsLeft === "false") {
+            showSolution()
+        }
+
+        function showSolution() {
+            console.log("Showing the solution. . . ")
+        }
+        
+        let person = {
+            name: "Per",
+            age: 35,
+            country: "Norway"
+        }
+
+        function logData() {
+            console.log(`${person.name} is ${person.age} years old and lives in ${person.country}`);
+        }
+        logData()
+        
+
+        let age = 25
+        
+        if (age < 6) {
+            console.log("free");
+        } else if (age < 18) {
+            console.log("child discount");
+            
+        } else if (age < 27) {
+            console.log("student discount");
+            
+        } else if (age < 67) {
+            console.log("full price");
+
+        } else {
+            console.log("senior citizen discount");
+            
+        } 
+
+
+        // let largeCountries = ["China", "India", "USA", "Indonesia", "Pakistan"]
+
+        // for (let i = 0; i < largeCountries.length; i++) {
+        //     console.log(` - ${largeCountries[i]}`); 
+        // }
+
+        let largeCountries = ["Tuvalu", "India", "USA", "Indonesia", "Monaco"]
+        largeCountries.pop()
+        console.log(largeCountries);
+        largeCountries.push("Pakistan")
+        largeCountries.shift()
+        console.log(largeCountries);
+        largeCountries.unshift("China")
+        console.log(largeCountries);
+        
+        let dayOfMonth = 13
+        let weekday = "Friday"
+
+        if (dayOfMonth == 13 && weekday == "Friday") {
+            console.log("spooky face")
+        }
+
+        let hands = ["rock", "paper", "scissors"]
+
+        let randomIndex = Math.floor(Math.random() * hands.length)
+        console.log(hands[randomIndex]);
+        
+
+        let fruit = ["apple", "orange", "apple", "apple", "orange"]
+        let appleShelf = document.getElementById("apple-shelf")
+        let orangeShelf = document.getElementById("orange-shelf")
+
+        function sortFruit() {
+            for (let i = 0; i < fruit.length; i++) {
+                if (fruit[i] == "apple") {
+                    appleShelf.textContent += "apple, "
+                } else {
+                    orangeShelf.textContent += "orange, "
+                }
+                
+            }
+        }
+        sortFruit() 
+
+        let myLeads = ["www.awesomelead.com", "www.epiclead.com", "www.greatlead.com"]
+        let inputEl = document.getElementById("input-el")
+        let btnEl =  document.getElementById("input-btn")
+        const ulEl = document.getElementById("ul-el")
+        let listItems = ""
+
+        const displayConsole = ()=>{
+            for (let i = 0; i < myLeads.length; i++) {
+                listItems += `
+                    <li>${myLeads[i]}</li>
+                `   
+            } 
+            ulEl.innerHTML = listItems
+        }
+        btnEl.addEventListener("click", displayConsole)
+
+
+    </script>
+</body>
+</html>

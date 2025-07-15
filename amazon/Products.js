@@ -1,7 +1,12 @@
 const searchInputEl = document.getElementById("search-input")
 const productListEl = document.querySelector(".products-list")
+const cartEl = document.getElementById("cart")
+
 
 const products = JSON.parse(localStorage.getItem("products")) || []
+// console.log(products);
+
+let cartItem = JSON.parse(localStorage.getItem("addToCart")) || []
 
 const display = (productsArray=products) => {
     productListEl.innerHTML = ""
@@ -12,7 +17,7 @@ const display = (productsArray=products) => {
                 <p>${ele.category}</p>
                 <p>${ele.price}</p>
                 <p>${ele.seller}</p>
-                <button>Add to cart</button>
+                <button onclick="addToCart(${ele.id})">Add to cart</button>
             </div>
         `
     ))
@@ -36,6 +41,29 @@ searchInputEl.addEventListener("input", search)
 const redirectToProduct = (id) =>{
     window.location.href = `./singleProduct.html?id=${id}`
 }
+// CART
+const getCart = (id) => {
+    const product = products.find((ele) => ele.id === id)
+    console.log(product);
+
+    return product
+}
+const addToCart = (id) =>{
+    const cartProduct = getCart(id)
+    cartItem.push(cartProduct)
+    localStorage.setItem("addToCart", JSON.stringify(cartItem))
+    updateCart()
+}
+
+const updateCart = () =>{
+    cartItem = JSON.parse(localStorage.getItem("addToCart"))
+    cartEl.textContent = cartItem.length
+}
+updateCart()
+
+redirectToCart = () =>{
+    window.location.href = `./cart.html`
+}
 
 
 
@@ -52,22 +80,7 @@ const redirectToProduct = (id) =>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// buttonEl.addEventListener("click", addToCart)
 
 // map
 // filter
